@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
 const messageRoute = require("./routes/messagesRoute");
@@ -30,8 +31,19 @@ const server = app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
 });
 
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("Client/build"));
+// }
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("Client/build"));
+  app.use(express.static(path.join(_dirname, " /Client/build")));
+  app.get(" * ", (req, res) => {
+    res.sendFile(path.join(_dirname, "Client", "build", "index.html"));
+  });
+} else {
+  app.get(" / ", (req, res) => {
+    res.send(" Api runnning ");
+  });
 }
 
 const io = socket(server, {
