@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
 
 const io = socket(server, {
   cors: {
-    origin: "+",
+    origin: "*",
     credentials: true,
   },
 });
