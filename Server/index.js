@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 
 const io = socket(server, {
   cors: {
-    origin: "https://localhost:3000",
+    origin: "PORT",
     credentials: true,
   },
 });
