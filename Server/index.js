@@ -4,10 +4,9 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
 const messageRoute = require("./routes/messagesRoute");
 const app = express();
-const socket = require("socket.io").listen(server);
+const socket = require("socket.io");
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
-server.listen(process.env.PORT || 3000);
 
 app.use(cors());
 app.use(express.json());
@@ -37,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
 
 const io = socket(server, {
   cors: {
-    origin: "PORT",
+    origin: "http://localhost:3000",
     credentials: true,
   },
 });
