@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Chat-App/static/css/main.73971d86.css",
+    "main.js": "/Chat-App/static/js/main.7e172cbe.js",
+    "static/media/robot1.gif": "/Chat-App/static/media/robot1.0617a41936621e9697cd.gif",
+    "static/media/loader2.gif": "/Chat-App/static/media/loader2.b40fc3d91ff1f4db53e2.gif",
+    "static/media/Logo.png": "/Chat-App/static/media/Logo.082316f4206f1bd05b48.png",
+    "index.html": "/Chat-App/index.html",
+    "main.73971d86.css.map": "/Chat-App/static/css/main.73971d86.css.map",
+    "main.7e172cbe.js.map": "/Chat-App/static/js/main.7e172cbe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73971d86.css",
+    "static/js/main.7e172cbe.js"
+  ]
+}
