@@ -9,7 +9,7 @@ import axios from "axios";
 import { setAvatarRoute } from "../utils/APIRoutes";
 
 export default function setAvatar() {
-  const api = "https://api.multiavatar.com/45678923";
+  const api = "https://api.multiavatar.com/45678926";
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -105,6 +105,8 @@ export default function setAvatar() {
 }
 const Container = styled.div`
   display: flex;
+  overflow: auto;
+  padding: 40px 0px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -136,10 +138,12 @@ const Container = styled.div`
         transition: 0.5s ease-in-out;
       }
     }
+
     .selected {
       border: 0.4rem solid #4e0eff;
     }
   }
+
   .submit-btn {
     background-color: #4e0eff;
     color: white;

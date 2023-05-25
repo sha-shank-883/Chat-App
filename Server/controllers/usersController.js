@@ -67,8 +67,23 @@ module.exports.getAllUsers = async (req, res, next) => {
       "username",
       "avatarImage",
       "_id",
+      "status",
     ]);
     return res.json(users);
+  } catch (ex) {
+    next(ex);
+  }
+  console.log(User.status);
+};
+
+module.exports.deleteUserProfile = async (req, res, next) => {
+  try {
+    const userId = req.params.id;
+    const deletedUser = await User.findByIdAndDelete(userId);
+    if (!deletedUser) {
+      return res.json({ msg: "User not found", status: false });
+    }
+    return res.json({ msg: "User deleted successfully", status: true });
   } catch (ex) {
     next(ex);
   }

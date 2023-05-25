@@ -21,12 +21,12 @@ const Button = styled.button`
   align-items: center;
   padding: 0.5rem;
   border-radius: 1rem;
-  background-color: #9a86f3;
+  background-color: #d79d9d;
   border: none;
   cursor: pointer;
   svg {
     font-size: 1.3rem;
-    color: #ebe7ff;
+    color: #ff0000;
   }
   &:hover {
     svg {

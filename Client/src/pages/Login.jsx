@@ -111,12 +111,13 @@ const FormContainer = styled.div`
         gap: 1rem;
         justify-content: center;
         img{
-            height: 5rem;
-            margin-top: -2rem;
+            height: 3rem;
+            margin-top: -1rem;
         }
         h1{
             color: white;
             text-transform: uppercase;
+            font-size: 30px;
         }
     }
     form{

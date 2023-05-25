@@ -17,6 +17,7 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
     setCurrentSelected(index);
     changeChat(contact);
   };
+  // console.log(contacts);
   return (
     <>
       {currentUserImage && currentUserImage && (
@@ -40,9 +41,11 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
                       src={`data:image/svg+xml;base64,${contact.avatarImage}`}
                       alt=""
                     />
+                    <div className={`status ${contact.status}`}></div>
                   </div>
                   <div className="username">
                     <h3>{contact.username}</h3>
+                    <p>{contact.status}</p>
                   </div>
                 </div>
               );
@@ -72,6 +75,7 @@ const Container = styled.div`
   background-color: #080420;
   .brand {
     display: flex;
+    background-color: #26218b;
     align-items: center;
     gap: 1rem;
     justify-content: center;
@@ -85,6 +89,7 @@ const Container = styled.div`
   }
   .contacts {
     display: flex;
+    margin-top: 1rem;
     flex-direction: column;
     align-items: center;
     overflow: auto;
@@ -112,10 +117,35 @@ const Container = styled.div`
         img {
           height: 3rem;
         }
+        .status {
+          margin: -18px 0px 0px 37px;
+          width: 0.7rem;
+          height: 0.7rem;
+          border: 1px solid white;
+          background-color: #00ff00;
+          border-radius: 50%;
+          position: relative;
+        }
+        .status.offline {
+          margin: -18px 0px 0px 37px;
+          width: 0.7rem;
+          height: 0.7rem;
+          border: 1px solid white;
+          background-color: #ff0000;
+          border-radius: 50%;
+          position: relative;
+        }
       }
       .username {
         h3 {
           color: white;
+        }
+        p {
+          color: #ffffffc4;
+          display: block;
+          position: relative;
+          font-size: 12px;
+          margin: 3px 0px 0px 2px;
         }
       }
     }
@@ -128,7 +158,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     .avatar {
       img {
         height: 4rem;
